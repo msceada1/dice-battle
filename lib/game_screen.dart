@@ -13,7 +13,7 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
-  final Random _random = Random();
+  final Random _random = Random();//preguntar
   String _name = '';
   int _lastDie = 0;
   int _total = 0;
@@ -34,6 +34,7 @@ class _GameScreenState extends State<GameScreen> {
     Navigator.of(context).push<void>(
       MaterialPageRoute<void>(
         builder: (context) =>
+        //se trnasfieren los datos a la clase ResultScreen
             ResultScreen(playerName: _name.trim(), total: _total),
       ),
     );

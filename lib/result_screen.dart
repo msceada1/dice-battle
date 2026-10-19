@@ -5,8 +5,8 @@ import 'app_texts.dart';
 class ResultScreen extends StatelessWidget {
   const ResultScreen({
     super.key,
-    required this.playerName,
-    required this.total,
+    required this.playerName,//transferencia del nombre
+    required this.total, //transferencia del total
   });
 
   final String playerName;
