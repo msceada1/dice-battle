@@ -86,7 +86,10 @@ class _GameScreenState extends State<GameScreen> {
                   Text(AppTexts.contador(_contador)),
                   const SizedBox(height: 24),
                   FilledButton(
-                    onPressed: _hasName ? _roll : null,
+                    onPressed: (_hasName && !_esContadorIgualACinco())
+                        ? _roll
+                        : null,
+
                     child: const Text(AppTexts.roll),
                   ),
                   const SizedBox(height: 12),
