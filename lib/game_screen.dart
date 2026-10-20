@@ -97,6 +97,11 @@ class _GameScreenState extends State<GameScreen> {
                     onPressed: _hasName ? _finish : null,
                     child: const Text(AppTexts.finish),
                   ),
+                  const SizedBox(height: 12),
+                  OutlinedButton(
+                    onPressed: _hasName ? _reload : null,
+                    child: const Text(AppTexts.reload),
+                  ),
                 ],
               ),
             ),
