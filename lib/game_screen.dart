@@ -26,7 +26,7 @@ class _GameScreenState extends State<GameScreen> {
     setState(() {
       _lastDie = _random.nextInt(6) + 1;
       _total += _lastDie;
-      _contador = _contador++;
+      _contador++;
     });
   }
 
