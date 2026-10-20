@@ -42,6 +42,21 @@ class _GameScreenState extends State<GameScreen> {
     );
   }
 
+  ///Metodo encargado de verificar que el contador sea igual a 5
+  ///si el contador es 5 devuelve true. En caso contrario devuelve false
+  bool _esContadorIgualACinco() {
+    return _contador == MAX_INTENTOS;
+  }
+
+  ///Metodo encargado de reiniciar a 0 los valores _lastDie, _total y _contador
+  void _reload() {
+    setState(() {
+      _lastDie = 0;
+      _total = 0;
+      _contador = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
