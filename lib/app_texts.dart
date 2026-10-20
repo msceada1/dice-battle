@@ -7,6 +7,7 @@ class AppTexts {
   static const finish = 'Finalizar';
   static const result = 'Resultado';
   static const back = 'Volver a la partida';
+  static const reload = 'Recargar';
 
   static String lastDie(int value) => 'Último dado: $value';
   static String total(int value) => 'Puntuación: $value';

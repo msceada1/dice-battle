@@ -13,11 +13,12 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
-  final Random _random = Random();//preguntar
+  final Random _random = Random(); //preguntar
+  static final int MAX_INTENTOS = 5;
   String _name = '';
   int _lastDie = 0;
   int _total = 0;
-  int _contador = 0;
+  int _contador = 0; //inicializacion de contador a 0
 
   bool get _hasName => _name.trim().isNotEmpty;
 
@@ -26,7 +27,7 @@ class _GameScreenState extends State<GameScreen> {
     setState(() {
       _lastDie = _random.nextInt(6) + 1;
       _total += _lastDie;
-      _contador++;
+      _contador++; //por cada tirada se incrementa el contador
     });
   }
 
@@ -36,8 +37,12 @@ class _GameScreenState extends State<GameScreen> {
     Navigator.of(context).push<void>(
       MaterialPageRoute<void>(
         builder: (context) =>
-        //se trnasfieren los datos a la clase ResultScreen
-            ResultScreen(playerName: _name.trim(), total: _total, contador: _contador),
+            //se trnasfieren los datos a la clase ResultScreen
+            ResultScreen(
+              playerName: _name.trim(),
+              total: _total,
+              contador: _contador,
+            ),
       ),
     );
   }
