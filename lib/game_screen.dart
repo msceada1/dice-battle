@@ -17,6 +17,7 @@ class _GameScreenState extends State<GameScreen> {
   String _name = '';
   int _lastDie = 0;
   int _total = 0;
+  int _contador = 0;
 
   bool get _hasName => _name.trim().isNotEmpty;
 
@@ -25,6 +26,7 @@ class _GameScreenState extends State<GameScreen> {
     setState(() {
       _lastDie = _random.nextInt(6) + 1;
       _total += _lastDie;
+      _contador = _contador++;
     });
   }
 
@@ -35,7 +37,7 @@ class _GameScreenState extends State<GameScreen> {
       MaterialPageRoute<void>(
         builder: (context) =>
         //se trnasfieren los datos a la clase ResultScreen
-            ResultScreen(playerName: _name.trim(), total: _total),
+            ResultScreen(playerName: _name.trim(), total: _total, contador: _contador),
       ),
     );
   }
@@ -65,6 +67,8 @@ class _GameScreenState extends State<GameScreen> {
                   Text(AppTexts.lastDie(_lastDie)),
                   const SizedBox(height: 12),
                   Text(AppTexts.total(_total)),
+                  const SizedBox(height: 24),
+                  Text(AppTexts.contador(_contador)),
                   const SizedBox(height: 24),
                   FilledButton(
                     onPressed: _hasName ? _roll : null,

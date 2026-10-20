@@ -7,10 +7,12 @@ class ResultScreen extends StatelessWidget {
     super.key,
     required this.playerName,//transferencia del nombre
     required this.total, //transferencia del total
+    required this.contador
   });
 
   final String playerName;
   final int total;
+  final int contador;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,8 @@ class ResultScreen extends StatelessWidget {
               const SizedBox(height: 12),
               Text(AppTexts.total(total)),
               const SizedBox(height: 24),
+              Text(AppTexts.contador(contador)),
+              const SizedBox(height: 15,),
               OutlinedButton(
                 onPressed: () => Navigator.of(context).pop(),
                 child: const Text(AppTexts.back),

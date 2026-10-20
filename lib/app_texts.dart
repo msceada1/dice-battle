@@ -11,4 +11,5 @@ class AppTexts {
   static String lastDie(int value) => 'Último dado: $value';
   static String total(int value) => 'Puntuación: $value';
   static String player(String name) => 'Jugador: $name';
+  static String contador (int contador) => 'contador: $contador';
 }
